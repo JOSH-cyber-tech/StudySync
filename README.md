@@ -273,9 +273,6 @@ To get started with **StudySync**, you can follow the setup instructions below. 
 
    You can now explore the **StudySync** app by navigating through the various features and functionalities. You can use the Pomodoro timer, check the weather, get music recommendations, chat with the AI, and more.
 
-5. **Contribute**:
-
-   If you would like to contribute to the project, feel free to fork the repository and submit a pull request with your changes. We welcome contributions from the community!
 
 ## File Structure
 
@@ -472,12 +469,6 @@ docker compose up --build
 ```
 
 This command will build the Docker images for the backend and frontend and run the containers. You can access the app at `http://localhost:8081` after the containers are up and running.
-
-## The Creator
-
-- [Son Nguyen](https://github.com/hoangsonww)
-- [Email](mailto:hoangson091104@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/hoangsonw/)
 
 ---
 
