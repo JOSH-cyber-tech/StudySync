@@ -219,12 +219,7 @@ Here are some UI screenshots for the app:
 
 To get started with **StudySync**, you can follow the setup instructions below. The project is divided into two main parts: the frontend and the backend. The frontend is built using Vue.js and Vuetify, while the backend is built using Node.js and Express.js. The backend uses MongoDB as the database.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/hoangsonww/StudySync-Study-Buddy-App.git
-   cd StudySync-Study-Buddy-App
-   ```
-2. **Set up the backend**:
+1. **Set up the backend**:
    - Navigate to the `backend` directory:
      ```bash
      cd backend
@@ -249,7 +244,7 @@ To get started with **StudySync**, you can follow the setup instructions below. 
      npm start
      ```
    - The backend server will start on `http://localhost:5000`.
-3. **Set up the frontend**:
+2. **Set up the frontend**:
 
    - Navigate to the `frontend` directory:
      ```bash
@@ -269,7 +264,7 @@ To get started with **StudySync**, you can follow the setup instructions below. 
      ```
    - Open your browser and go to `http://localhost:8081` to view the app. (The URL may vary based on the port used by Vue CLI - check the terminal output for the correct URL.)
 
-4. **Explore the app**:
+3. **Explore the app**:
 
    You can now explore the **StudySync** app by navigating through the various features and functionalities. You can use the Pomodoro timer, check the weather, get music recommendations, chat with the AI, and more.
 

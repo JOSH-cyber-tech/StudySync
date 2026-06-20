@@ -9,7 +9,7 @@ docker build -t studysync-backend .
 
 # Run the Docker container for the backend
 echo "Running the backend container..."
-docker run -d --name studysync-backend -p 5000:5000 studysync-backend
+docker run -d --name studysync-backend -p 5001:5001 studysync-backend
 
 # Show running containers
 docker ps

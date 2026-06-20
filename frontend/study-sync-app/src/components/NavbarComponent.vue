@@ -301,7 +301,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import axios from "axios"; // Assuming Axios is used for HTTP requests
+import api from "../api";
 
 export default {
   data() {
@@ -333,12 +333,9 @@ export default {
       }
 
       try {
-        await axios.get(
-          "https://studysync-backend-api.vercel.app/api/profile",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
+        await api.get("/profile", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
       } catch (error) {
         console.error("Token validation failed:", error.message);
 
@@ -371,7 +368,7 @@ export default {
     this.fetchUserProfile();
 
     // Set up periodic validation every 5 seconds
-    this.tokenCheckInterval = setInterval(this.fetchUserProfile, 5000);
+    this.tokenCheckInterval = setInterval(this.fetchUserProfile, 5001);
   },
   beforeUnmount() {
     // Clear the interval to prevent memory leaks

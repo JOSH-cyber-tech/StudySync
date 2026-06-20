@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import api from "../api";
 
 export default {
   data() {
@@ -106,10 +106,9 @@ export default {
     },
     async verifyEmail() {
       try {
-        const response = await axios.post(
-          "https://studysync-backend-api.vercel.app/api/auth/verify-email",
-          { email: this.email },
-        );
+        const response = await api.post("/auth/verify-email", {
+          email: this.email,
+        });
 
         if (response.data.exists) {
           this.emailVerified = true;
@@ -130,10 +129,10 @@ export default {
       }
 
       try {
-        await axios.post(
-          "https://studysync-backend-api.vercel.app/api/auth/reset-password",
-          { email: this.email, newPassword: this.newPassword },
-        );
+        await api.post("/auth/reset-password", {
+          email: this.email,
+          newPassword: this.newPassword,
+        });
 
         this.successMessage =
           "Password reset successfully. Redirecting to login...";

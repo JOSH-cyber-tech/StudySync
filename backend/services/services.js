@@ -279,6 +279,8 @@ const createStudySession = async (groupId, date, musicMood) => {
 let sessionHistory = {};
 
 const chatWithAI = async (sessionId, message, originalText = "") => {
+  const systemInstruction =
+    process.env.AI_INSTRUCTION || process.env.AI_INSTRUCTIONS || "";
   const models = await getGeminiModels();
   if (!models.length) {
     throw new Error("No Gemini models available");
@@ -303,7 +305,7 @@ const chatWithAI = async (sessionId, message, originalText = "") => {
     try {
       const model = genAI.getGenerativeModel({
         model: modelName,
-        systemInstruction: `${process.env.AI_INSTRUCTIONS}. Respond to the user conversationally.`,
+        systemInstruction: `${systemInstruction}. Respond to the user conversationally.`,
       });
       const chatSession = model.startChat({ history });
       const result = await chatSession.sendMessage(message);

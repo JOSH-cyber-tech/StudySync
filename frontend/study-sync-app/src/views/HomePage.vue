@@ -497,7 +497,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import api from "../api";
 import { mapState } from "vuex";
 import { marked } from "marked";
@@ -633,9 +632,7 @@ export default {
         return;
       }
       try {
-        const response = await axios.get(
-          `https://studysync-backend-api.vercel.app/api/cities?query=${this.city}`,
-        );
+        const response = await api.get(`/cities?query=${this.city}`);
         this.citySuggestions = response.data.cities.map((city) => ({
           displayName: `${city.name}, ${city.state ? city.state + ", " : ""}${city.country}`,
           fullCity: city,
@@ -659,14 +656,11 @@ export default {
         }
 
         // Make an API request to get the user's profile
-        const response = await axios.get(
-          "https://studysync-backend-api.vercel.app/api/profile",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+        const response = await api.get("/profile", {
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-        );
+        });
 
         // Check if response is successful and contains the user object
         if (response.data.success && response.data.user) {
@@ -796,12 +790,9 @@ export default {
           console.error("No token found");
           return;
         }
-        const response = await axios.get(
-          `https://studysync-backend-api.vercel.app/api/music?searchTerm=${this.mood}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
+        const response = await api.get(`/music?searchTerm=${this.mood}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         if (response.data.success) {
           this.musicRecommendations = response.data.recommendations;
         } else {
@@ -837,9 +828,7 @@ export default {
         }
 
         // Call the backend API for weather data
-        const response = await axios.get(
-          `https://studysync-backend-api.vercel.app/api/weather?city=${this.city}`,
-        );
+        const response = await api.get(`/weather?city=${this.city}`);
 
         // Check if the response was successful and contains data
         if (response.data.success && response.data.data) {

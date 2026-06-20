@@ -50,7 +50,7 @@ try {
 
   console.log("\n✅ All tests passed!");
   console.log(
-    "\n💡 To test in browser, run: npm run dev and visit http://localhost:5000/api-docs",
+    "\n💡 To test in browser, run: npm run dev and visit http://localhost:5001/api-docs",
   );
 } catch (error) {
   console.error("\n❌ Error loading swagger spec:");
