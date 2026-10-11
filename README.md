@@ -99,11 +99,6 @@ All the features of the StudySync app include:
 - **Fully Responsive**: Works on all devices and screen sizes.
 - **And More!**: Explore the app for additional features and tools.
 
-## Live Deployment
-
-The app is currently live at [https://study-sync-app.vercel.app/](https://study-sync-app.vercel.app/). You can explore the various features and functionalities of the app, including the Pomodoro timer, music recommendations, weather checks, and AI chat assistance.
-
-The backend API is hosted on Render at [https://studysync-study-buddy-app.onrender.com](https://studysync-study-buddy-app.onrender.com/). The frontend is hosted on Vercel and communicates with the backend API for data retrieval and storage.
 
 > [!IMPORTANT]
 > **Note**: The app may take a while to spin up, which means it may take 2-3 minutes (max) to load the backend logic. This is due to Render's free tier resource limit, where we are only allocated 0.1 CPU and 512MB RAM. Thank you for your understanding!
